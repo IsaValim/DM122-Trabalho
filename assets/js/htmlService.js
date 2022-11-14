@@ -15,14 +15,12 @@ export default class HtmlService {
         })
     }
 
-    async addReport(name, theme, score) {
-        const report = { name, theme, score};
-        const reportId = await this.schoolsService.save(report);
-        console.log(reportId);
-        report.id = reportId;
-        this.addToHtmlList(report);
+    async deleteReport(li) {
+        const reportId = +li.getAttribute('data-item-id');
+        await this.schoolsService.delete(reportId);
+        li.remove();        
     }
-
+    
     async listreports() {
         const reports = await this.schoolsService.getAll();
         reports.forEach(report => this.addToHtmlList(report));
@@ -32,12 +30,13 @@ export default class HtmlService {
         const report = await this.schoolsService.getById(reportId);
         this.schoolsService.save(report);
     }
-
-
-    async deleteReport(li) {
-        const reportId = +li.getAttribute('data-item-id');
-        await this.schoolsService.delete(reportId);
-        li.remove();        
+    
+    async addReport(name, theme, score) {
+        const report = { name, theme, score};
+        const reportId = await this.schoolsService.save(report);
+        console.log(reportId);
+        report.id = reportId;
+        this.addToHtmlList(report);
     }
 
     addToHtmlList(report) {
