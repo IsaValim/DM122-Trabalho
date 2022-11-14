@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+form {
+  padding: 45px;
+  border-bottom: solid 5px rgb(0, 0, 0);
+}
+
+input {
+  width: 70%;
+  padding: 0.5em;
+  font-size: 1.4em;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin: 6px 0;
+}
+
+.button-submit{
+  padding: 0.5em;
+  font-size: 1.4em;
+  float: right;
+  width: 15%;
+  background-color: #070606;
+  border-radius: 40px;
+  color: white;
+}
+
+
+li {
+  padding: 10px;
+  border-bottom: solid 2px rgb(71, 70, 70);
+  cursor: pointer;
+  display: flex;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li > span {
+  flex: 1;
+  text-align: center;
+}
+
+li > button {
+  background: none;
+  border: 4;
+  outline: 0;
+  cursor: pointer;
+}
+
+.mdl-layout__header {
+  background-color: #000000;
+}
+
+.done > span {
+  text-decoration: line-through;
+}
